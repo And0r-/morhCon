@@ -29,6 +29,7 @@ function MCA:OnEnable()
 	self:Print("Addon geladen")
 end
 
+-- show event 7
 
 -----------------------------------------------------------------------------------------------
 -- Add Event
@@ -44,11 +45,9 @@ end
 function MCA:OnEnable()
 	-- Called when the addon is enabled
 	self:Print("Addon geladen")
-	-- ++++++++++++++
 	self:RegisterEvent("BANKFRAME_OPENED")
 end
 
--- +++++++++++++
 function MCA:BANKFRAME_OPENED()
 	-- Get ItemID from first Bankslot
 	local itemId = GetContainerItemID(-1,1)
@@ -122,7 +121,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
- Database:
+-- Database:
 
 local MCA = LibStub("AceAddon-3.0"):NewAddon("MorphConAddon", "AceConsole-3.0", "AceEvent-3.0")
 
@@ -240,11 +239,6 @@ end
 function MCA:BANKFRAME_OPENED()
 	-- Get ItemID from first Bankslot
 	local itemId = GetContainerItemID(-1,1)
-	print(itemId)
-
-	if itemId then
-		print("ist ".. itemId .." == ".. self.db.profile.itemId)
-	end
 
 	if itemId == self.db.profile.itemId then
 		self:Print(L["Gefunden"])

@@ -1,21 +1,27 @@
-globale_variable = "bla"
-local lokale_variable = "bla"
+globale_variable = "Globale Variabel"
+local lokale_variable = "Lokale Variabel"
+
+-- /run print(globale_variable)
+-- /run print(lokale_variable)
+
 
 local myString = "Hello World"
 print(myString)
 
+-- /reload
 
 local myArray = {"value1", "value2", "value3"}
-print("array2: "..myArray[2])
+print("array: "..myArray[2])
+
+-- Ausgabe: value2
 
 
-local myArray = {[1]="value1", [2]="value2", [3]="value3"}
 
-local myHash = {eins="hashValue1", zwei="hashValue1", drei="hashValue3"}
+local myHash = {eins="hashValue1", zwei="hashValue2", drei="hashValue3"}
 
-print("hash2: "..myHash["zwei"])
+print("hash: "..myHash["zwei"])
 -- Kann man aber noch viel cooler schreiben:
-print("cool hash2: "..myHash.zwei)
+print("cool hash: "..myHash.zwei)
 
 
 -- In lua gibt es aber keine Hashes und Arrays sondern nur Tables...
@@ -26,7 +32,9 @@ local myTable = {"value1", [2]="value2", drei="value3"}
 -- myTable.drei ist "value3"
 
 
-
+-------------------------------------------------------------------------------
+-- Funktionen
+local myTable = {"value1", [2]="value2", drei="value3"}
 
 function machEtwas()
 	print "ich gebe etwas aus"
@@ -34,7 +42,8 @@ end
 
 machEtwas()
 
-
+---------------------------------------------------------------------------------
+local myTable = {"value1", [2]="value2", drei="value3"}
 
 function myTable.machEtwas()
 	print("ich gebe etwas anderes aus: "..myTable.drei)
@@ -42,12 +51,6 @@ end
 
 myTable.machEtwas()
 
-
-function myTable.machEtwas(string)
-	print("ich gebe etwas anderes aus: "..string)
-end 
-
-myTable.machEtwas("parameterString")
 
 
 function myTable.machEtwas(table)
@@ -82,10 +85,10 @@ print(getValue())
 
 
 function returnTable()
-	return {eins="eins",zwei="zwei"}
+	return {"eins","zwei"}
 end
 
-print(returnTable().zwei)
+print(returnTable()[2])
 
 
 function returnMultipleParams()
@@ -117,19 +120,24 @@ end
 
 -- loops:
 
-local myTable = {[0]="value0", "value1", [2]="value2", drei="value3", [4]="value4"}
+local myTable = {[0]="v0", "v1", [2]="v2", d="v3", [4]="v4"}
 
 
 -- ipairs vs pairs
+
+for index, value in pairs(myTable) do
+	print(value)
+end
+
+-- show event 5
 
 for index, value in ipairs(myTable) do
 	print(value)
 end
 
+-- show event 6
 
-for index, value in pairs(myTable) do
-	print(value)
-end
+
 
 
 
