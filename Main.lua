@@ -29,7 +29,7 @@ function MCA:OnEnable()
 	self:Print("Addon geladen")
 end
 
--- show event 7
+-- show event 1
 
 -----------------------------------------------------------------------------------------------
 -- Add Event

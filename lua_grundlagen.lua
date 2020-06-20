@@ -1,19 +1,20 @@
-globale_variable = "Globale Variabel"
-local lokale_variable = "Lokale Variabel"
+globale_variable = "Globales Hello World"
+local lokale_variable = "Lokales Hello World"
+
+-- show event 4
 
 -- /run print(globale_variable)
 -- /run print(lokale_variable)
 
 
-local myString = "Hello World"
-print(myString)
-
 -- /reload
-
+----------------------------------------------------------------------------
+-- show event 4 ende
 local myArray = {"value1", "value2", "value3"}
 print("array: "..myArray[2])
 
 -- Ausgabe: value2
+-- show event 1
 
 
 
@@ -23,35 +24,26 @@ print("hash: "..myHash["zwei"])
 -- Kann man aber noch viel cooler schreiben:
 print("cool hash: "..myHash.zwei)
 
+-- show event 2
+
 
 -- In lua gibt es aber keine Hashes und Arrays sondern nur Tables...
 
 local myTable = {"value1", [2]="value2", drei="value3"}
 
--- myTable[1] ist "value1"
--- myTable.drei ist "value3"
 
 
 -------------------------------------------------------------------------------
 -- Funktionen
-local myTable = {"value1", [2]="value2", drei="value3"}
 
 function machEtwas()
-	print "ich gebe etwas aus"
+	print("ich gebe etwas aus")
 end 
 
 machEtwas()
 
 ---------------------------------------------------------------------------------
 local myTable = {"value1", [2]="value2", drei="value3"}
-
-function myTable.machEtwas()
-	print("ich gebe etwas anderes aus: "..myTable.drei)
-end 
-
-myTable.machEtwas()
-
-
 
 function myTable.machEtwas(table)
 	print("ich gebe etwas anderes aus: "..table.drei)
@@ -79,17 +71,13 @@ end
 print(getValue())
 
 
-
-
--- table vs multiple params
-
-
 function returnTable()
 	return {"eins","zwei"}
 end
 
 print(returnTable()[2])
 
+---------
 
 function returnMultipleParams()
 	return "eins", "zwei"
@@ -101,21 +89,6 @@ print(zwei)
 print(select(2,returnMultipleParams()))
 
 -------------------------------------------------------------------------------------------------------
-
--- If Statements:
-if true then
-	print("immer True")
-end
-
-
-if 1==2 then
-	print("1 ist gleich 2")
-elseif 1~=2 then
-	print("1 ist ungleich 2")
-end
-
-
-
 
 
 -- loops:
